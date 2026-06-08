@@ -2,6 +2,8 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 <title>Il Blu Welcome Guide</title>
 
 <script src="https://unpkg.com/page-flip/dist/js/page-flip.browser.js"></script>
@@ -9,7 +11,7 @@
 <style>
 body{
     margin:0;
-    background:#ffffff;
+    background:#000;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -17,8 +19,8 @@ body{
 }
 
 #book{
-    width:550,
-    height:850,
+    width:100vw,
+    height:100vh,
 }
 
 .page{
@@ -57,10 +59,28 @@ body{
 const pageFlip = new St.PageFlip(
     document.getElementById("book"),
     {
-        width:550,
-        height:850,
+        width:800,
+        height:1200,
+
+        size:"stretch",
+
+        minWidth:315,
+        maxWidth:2000,
+
+        minHeight:420,
+        maxHeight:3000,
+
         showCover:true,
-        mobileScrollSupport:false
+
+        mobileScrollSupport:false,
+
+        useMouseEvents:true,
+
+        swipeDistance:30,
+
+        flippingTime:500,
+
+        maxShadowOpacity:0.3
     }
 );
 
